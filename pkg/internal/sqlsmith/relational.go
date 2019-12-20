@@ -96,7 +96,7 @@ var (
 		{10, makeInsert},
 		{10, makeDelete},
 		{10, makeUpdate},
-		{1, makeAlter},
+		{100, makeAlter},
 	}
 	nonMutatingStatements = statementWeights{
 		{10, makeSelect},

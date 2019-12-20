@@ -11,6 +11,10 @@
 package sqlsmith
 
 import (
+	"fmt"
+	"go/constant"
+	"go/token"
+
 	"github.com/cockroachdb/cockroach/pkg/sql/sem/tree"
 	"github.com/cockroachdb/cockroach/pkg/sql/sqlbase"
 	"github.com/cockroachdb/cockroach/pkg/sql/types"
@@ -33,7 +37,7 @@ func init() {
 		{1, makeRenameColumn},
 		{1, makeAlterColumnType},
 
-		{1, makeCreateIndex},
+		{10, makeCreateIndex},
 		{1, makeDropIndex},
 		{1, makeRenameIndex},
 	}
@@ -267,12 +271,20 @@ func makeCreateIndex(s *Smither) (tree.Statement, bool) {
 		seen[col.Name] = true
 		storing = append(storing, col.Name)
 	}
+	var sharded *tree.ShardedIndexDef
+	if s.coin() {
+		buckets := fmt.Sprintf("%d", s.rnd.Intn(15))
+		sharded = &tree.ShardedIndexDef{
+			ShardBuckets: tree.NewNumVal(constant.MakeFromLiteral(buckets, token.INT, 0), buckets, false /* negative */),
+		}
+	}
 
 	return &tree.CreateIndex{
 		Name:     s.name("idx"),
 		Table:    *tableRef.TableName,
 		Unique:   unique,
 		Columns:  cols,
+		Sharded:  sharded,
 		Storing:  storing,
 		Inverted: inverted,
 	}, true
