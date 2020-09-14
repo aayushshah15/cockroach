@@ -1,0 +1,20 @@
+I200911 02:57:19.592011 1 workload/cli/run.go:356  creating load generator...
+Initializing 20000 connections...
+Initializing 100000 workers and preparing statements...
+Error: failed to initialize the load generator: preparing 
+		SELECT count(DISTINCT s_i_id)
+		FROM order_line
+		JOIN stock
+		ON s_w_id = $1 AND s_i_id = ol_i_id
+		WHERE ol_w_id = $1
+		  AND ol_d_id = $2
+		  AND ol_o_id BETWEEN $3 - 20 AND $3 - 1
+		  AND s_quantity < $4: ERROR: root: memory budget exceeded: 30720 bytes requested, 8224532480 currently allocated, 8224539648 bytes in budget (SQLSTATE 53200)
+Error: COMMAND_PROBLEM: exit status 1
+(1) COMMAND_PROBLEM
+Wraps: (2) Node 16. Command with error:
+  | ```
+  | ulimit -n 20500 && ./workload run tpcc --partitions=5  --warehouses=15000 --active-warehouses=10000 --ramp=1m --duration=1m {pgurl:1}
+  | ```
+Wraps: (3) exit status 1
+Error types: (1) errors.Cmd (2) *hintdetail.withDetail (3) *exec.ExitError

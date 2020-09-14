@@ -293,7 +293,7 @@ func (w *tpcc) Hooks() workload.Hooks {
 				w.txOpts = &pgx.TxOptions{IsoLevel: pgx.Serializable}
 			}
 
-			w.auditor = newAuditor(w.warehouses)
+			w.auditor = newAuditor(w.activeWarehouses)
 			w.deliveryQueue = newDeliveryQueue(w.warehouses)
 
 			// Create a partitioner to help us partition the warehouses. The base-case is

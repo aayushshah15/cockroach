@@ -1,0 +1,11 @@
+I200911 05:20:17.545396 1 workload/cli/run.go:356  creating load generator...
+Initializing 30000 connections...
+Error: failed to initialize the load generator: dial tcp 10.12.24.233:26257: connect: cannot assign requested address
+Error: COMMAND_PROBLEM: exit status 1
+(1) COMMAND_PROBLEM
+Wraps: (2) Node 16. Command with error:
+  | ```
+  | ulimit -n 30500 && ./workload run tpcc --partitions=5  --warehouses=15000 --active-warehouses=15000 --ramp=1m --duration=1m {pgurl:3}
+  | ```
+Wraps: (3) exit status 1
+Error types: (1) errors.Cmd (2) *hintdetail.withDetail (3) *exec.ExitError

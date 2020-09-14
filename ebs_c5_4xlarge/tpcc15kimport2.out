@@ -1,0 +1,20 @@
+I200911 00:19:40.898489 1 ccl/workloadccl/fixture.go:316  starting import of 9 tables
+I200911 00:19:45.539336 40 ccl/workloadccl/fixture.go:446  imported 945 KiB in warehouse table (15000 rows, 0 index entries, took 4.626718625s, 0.20 MiB/s)
+I200911 00:19:46.666291 46 ccl/workloadccl/fixture.go:446  imported 7.8 MiB in item table (100000 rows, 0 index entries, took 5.753405571s, 1.35 MiB/s)
+I200911 00:20:06.373261 41 ccl/workloadccl/fixture.go:446  imported 18 MiB in district table (150000 rows, 0 index entries, took 25.460635356s, 0.72 MiB/s)
+I200911 00:20:47.018392 45 ccl/workloadccl/fixture.go:446  imported 1.9 GiB in new_order table (135000000 rows, 0 index entries, took 1m6.105566084s, 29.17 MiB/s)
+I200911 00:25:43.026338 44 ccl/workloadccl/fixture.go:446  imported 24 GiB in order table (450000000 rows, 450000000 index entries, took 6m2.113576297s, 66.89 MiB/s)
+I200911 00:26:03.031383 43 ccl/workloadccl/fixture.go:446  imported 32 GiB in history table (450000000 rows, 0 index entries, took 6m22.118668842s, 86.97 MiB/s)
+I200911 00:39:45.297374 42 ccl/workloadccl/fixture.go:446  imported 266 GiB in customer table (450000565 rows, 450000000 index entries, took 20m4.384688981s, 226.15 MiB/s)
+I200911 00:46:00.924087 48 ccl/workloadccl/fixture.go:446  imported 256 GiB in order_line table (4500034572 rows, 0 index entries, took 26m20.011176209s, 165.79 MiB/s)
+I200911 00:58:58.478754 47 ccl/workloadccl/fixture.go:446  imported 471 GiB in stock table (1500000000 rows, 1500000000 index entries, took 39m17.56585602s, 204.51 MiB/s)
+I200911 00:58:58.589784 1 ccl/workloadccl/fixture.go:325  imported 1.0 TiB bytes in 9 tables (took 39m17.691112105s, 456.32 MiB/s)
+I200911 00:59:00.373771 1 ccl/workloadccl/cliccl/fixtures.go:350  fixture is restored; now running consistency checks (ctrl-c to abort)
+I200911 00:59:01.035748 1 workload/tpcc/tpcc.go:390  check 3.3.2.1 took 661.941619ms
+I200911 01:01:50.331444 1 workload/tpcc/tpcc.go:390  check 3.3.2.2 took 2m49.295646677s
+I200911 01:02:01.984442 1 workload/tpcc/tpcc.go:390  check 3.3.2.3 took 11.652959281s
+I200911 01:09:41.745161 1 workload/tpcc/tpcc.go:390  check 3.3.2.4 took 7m39.760681394s
+I200911 01:11:21.597520 1 workload/tpcc/tpcc.go:390  check 3.3.2.5 took 1m39.852319511s
+I200911 02:01:14.795994 1 workload/tpcc/tpcc.go:390  check 3.3.2.7 took 49m53.198432888s
+I200911 02:03:05.503564 1 workload/tpcc/tpcc.go:390  check 3.3.2.8 took 1m50.707531255s
+I200911 02:04:26.344583 1 workload/tpcc/tpcc.go:390  check 3.3.2.9 took 1m20.840983272s

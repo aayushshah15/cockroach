@@ -1,0 +1,34 @@
+Flag --insecure has been deprecated, it will be removed in a subsequent release.
+For details, see: https://go.crdb.dev/issue-v/53404/v20.2
+Flag --insecure has been deprecated, it will be removed in a subsequent release.
+For details, see: https://go.crdb.dev/issue-v/53404/v20.2
+*
+* WARNING: RUNNING IN INSECURE MODE!
+* 
+* - Your cluster is open for any client that can access <all your IP addresses>.
+* - Any user, even root, can log in without providing a password.
+* - Any user, connecting as root, can read or write any data in your cluster.
+* - There is no network encryption nor authentication, and thus no confidentiality.
+* 
+* Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.html
+*
+*
+* INFO: initial startup completed
+* Node will now attempt to join a running cluster, or wait for `cockroach init`.
+* Client connections will be accepted after this completes successfully.
+* Check the log file(s) for progress. 
+*
+Flag --insecure has been deprecated, it will be removed in a subsequent release.
+For details, see: https://go.crdb.dev/issue-v/53404/v20.2
+Flag --insecure has been deprecated, it will be removed in a subsequent release.
+For details, see: https://go.crdb.dev/issue-v/53404/v20.2
+*
+* WARNING: RUNNING IN INSECURE MODE!
+* 
+* - Your cluster is open for any client that can access <all your IP addresses>.
+* - Any user, even root, can log in without providing a password.
+* - Any user, connecting as root, can read or write any data in your cluster.
+* - There is no network encryption nor authentication, and thus no confidentiality.
+* 
+* Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.html
+*
